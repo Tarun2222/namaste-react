@@ -70,3 +70,8 @@ flex-wrap: wrap;
   display: flex;
   margin: 10px;
 }
+
+.res-card-name {
+  color: inherit; /* Inherit the color from the parent or set a specific color */
+  text-decoration: none; /* Remove the underline */
+}
