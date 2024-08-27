@@ -75,3 +75,8 @@ flex-wrap: wrap;
   color: inherit; /* Inherit the color from the parent or set a specific color */
   text-decoration: none; /* Remove the underline */
 }
+
+.user-card{
+  padding: 10px;
+  border: 1px solid black;
+}
