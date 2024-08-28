@@ -40,17 +40,17 @@ if(onlineStatus===false){
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search  m-4 p-4">
           <input
             type="text"
-            className="seach-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setsearchText(e.target.value);
             }}
           />
-          <button
+          <button className="px-4 py-2 bg-gray-400 m-4 rounded-lg"
             onClick={() => {
               // Filter the restaurant card and update the UI
               console.log(searchText);
@@ -65,8 +65,9 @@ if(onlineStatus===false){
             Search
           </button>
         </div>
+        <div className="search  m-4 p-4">
         <button
-          className="filter-btn"
+          className="px-4 py-2 bg-gray-400 m-4 rounded-lg"
           onClick={() => {
             const filteredList = restaurantList.filter(
               (res) => res.info.avgRating > 4
@@ -76,8 +77,9 @@ if(onlineStatus===false){
         >
           Top Rated Restaurant
         </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
           <Link className="res-card-name"
             key={restaurant.info.id}
