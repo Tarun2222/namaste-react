@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { FcApproval, FcCancel } from "react-icons/fc";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Head = () => {
   const [loginLogoutBtn, setloginLogoutBtn] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const {loggedInUser} = useContext(UserContext);
   return (
     <div className="flex justify-between  bg-pink-200 shadow-lg  hover:bg-gray-300 sm:bg-blue-100 lg:bg-gray-100">
       <div className="logo-container">
@@ -38,6 +40,7 @@ const Head = () => {
           >
             {loginLogoutBtn}
           </button>
+          <li className="px-4 p-2">{loggedInUser}</li>
         </ul>
       </div>
     </div>

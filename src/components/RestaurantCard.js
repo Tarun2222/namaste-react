@@ -1,9 +1,10 @@
 import {CDN_URl} from "../utils/constants";
 
+
 const RestaurantCard = (props) => {
   // destructuring const RestaurantCard = ({resName,cuisine})
   const { resData } = props;
-  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } =
+  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla ,veg} =
     resData?.info;
   return (
     <div className="m-4 p-4 w-[290px] rounded-lg bg-gray-100 hover:bg-gray-300" >
@@ -23,5 +24,18 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
+
+//Higher order Component
+// input - RestaurantCard ==> VegRestaurant card
+export const withVegLabel= (RestaurantCard)=>{
+  return(props)=>{
+    return (
+      <div>
+        <label className="absolute bg-green-600 text-white m-2 p-2 rounded-full h-10 w-10">Veg</label>
+        <RestaurantCard {...props}/>
+      </div>
+    )
+  }
+}
 
 export default RestaurantCard;

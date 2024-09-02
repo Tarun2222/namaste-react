@@ -1,20 +1,23 @@
 import UserClass from "./UserClass";
 import React from "react";
+import UserContext from "../utils/UserContext";
 
 class About extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount(){
-    
-  }
+  componentDidMount() {}
 
   render() {
     return (
       <div>
         <h1>About</h1>
-        {/* <User name={"Tarundeep Function"}/> */}
+        <div>
+          <UserContext.Consumer>
+            {(value) => <div>{value.loggedInUser}</div>}
+          </UserContext.Consumer>
+        </div>
         <UserClass name={"Tarundeep Class"} location={"Ambala Class"} />
       </div>
     );
