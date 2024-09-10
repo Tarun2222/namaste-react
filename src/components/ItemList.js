@@ -12,7 +12,7 @@ const ItemList = ({ items }) => {
   return (
     <div>
       {items.map((item) => (
-        <div
+        <div data-testid="foodItems"
           key={item.card.info.id}
           className="p-2 m-2 border-gray-300 border-b-2 text-left flex justify-between"
         >

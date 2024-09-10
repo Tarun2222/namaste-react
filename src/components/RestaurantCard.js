@@ -4,10 +4,11 @@ import {CDN_URl} from "../utils/constants";
 const RestaurantCard = (props) => {
   // destructuring const RestaurantCard = ({resName,cuisine})
   const { resData } = props;
-  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla ,veg} =
+  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla} =
     resData?.info;
+
   return (
-    <div className="m-4 p-4 w-[290px] rounded-lg bg-gray-100 hover:bg-gray-300" >
+    <div data-testid="resCard" className="m-4 p-4 w-[290px] rounded-lg bg-gray-100 hover:bg-gray-300" >
       <img
         className="rounded-lg h-[400px] w-[290px] "
         alt="res-logo"
